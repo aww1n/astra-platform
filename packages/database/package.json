@@ -1,0 +1,8 @@
+{
+  "name": "@astra/database",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test:integration": "bash test/run.sh"
+  }
+}

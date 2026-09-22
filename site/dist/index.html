@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#070b12">
+  <meta name="description" content="ASTRA — интерактивный DEMO-прототип Telegram sportsbook.">
+  <title>ASTRA — Demo Sportsbook</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23070b12'/%3E%3Cpath d='M32 9 54 52H43l-4-9H25l-4 9H10L32 9Zm0 15-4 11h8l-4-11Z' fill='%23d7ff35'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail" aria-label="Основная навигация">
+      <div class="brand-mark" aria-label="ASTRA">A</div>
+      <button class="rail-item active" data-page="home" aria-label="Главная"><span>⌂</span><b>Главная</b></button>
+      <button class="rail-item" data-page="sports" aria-label="Спорт"><span>◉</span><b>Спорт</b></button>
+      <button class="rail-item" data-page="bets" aria-label="Мои ставки"><span>▤</span><b>Ставки</b></button>
+      <button class="rail-item" data-page="profile" aria-label="Профиль"><span>◎</span><b>Профиль</b></button>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div class="brand"><span class="brand-star">✦</span> ASTRA <small>DEMO</small></div>
+        <div class="top-actions">
+          <button class="icon-button" id="searchBtn" aria-label="Поиск">⌕</button>
+          <button class="balance" id="walletBtn"><span>Баланс</span><strong>1 250.00 USDT</strong></button>
+          <button class="avatar" aria-label="Профиль">IK</button>
+        </div>
+      </header>
+
+      <section class="content" id="homePage">
+        <div class="mode-row">
+          <div class="mode-tabs" role="tablist" aria-label="Режим событий">
+            <button class="mode-tab active" data-mode="live" role="tab">LIVE <span>8</span></button>
+            <button class="mode-tab" data-mode="today" role="tab">Сегодня</button>
+            <button class="mode-tab" data-mode="upcoming" role="tab">Скоро</button>
+          </div>
+          <button class="filter-button">Фильтры <span>⌄</span></button>
+        </div>
+
+        <div class="sport-strip" aria-label="Виды спорта">
+          <button class="sport-pill active" data-sport="all"><i>✦</i> Все</button>
+          <button class="sport-pill" data-sport="football"><i>⚽</i> Футбол <em>12</em></button>
+          <button class="sport-pill" data-sport="basketball"><i>◉</i> Баскетбол <em>7</em></button>
+          <button class="sport-pill" data-sport="tennis"><i>●</i> Теннис <em>9</em></button>
+          <button class="sport-pill" data-sport="hockey"><i>◆</i> Хоккей <em>4</em></button>
+        </div>
+
+        <article class="feature-card" data-sport-card="football">
+          <div class="feature-copy">
+            <div class="eyebrow"><span class="live-dot"></span> LIVE · 67:21</div>
+            <p class="competition">Испания · Ла Лига</p>
+            <div class="score-line"><h1>Real Madrid</h1><strong>2</strong></div>
+            <div class="score-line"><h1>Barcelona</h1><strong>1</strong></div>
+            <p class="incident">67′ · Удар в створ · Real Madrid</p>
+          </div>
+          <div class="match-visual" aria-hidden="true">
+            <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+            <div class="score-orb"><small>LIVE</small><b>2<span>:</span>1</b><em>67:21</em></div>
+          </div>
+          <div class="featured-odds">
+            <button class="odd" data-event="Real Madrid — Barcelona" data-pick="П1" data-odd="1.65"><span>П1</span><b>1.65</b></button>
+            <button class="odd" data-event="Real Madrid — Barcelona" data-pick="X" data-odd="4.20"><span>Ничья</span><b>4.20</b></button>
+            <button class="odd" data-event="Real Madrid — Barcelona" data-pick="П2" data-odd="5.10"><span>П2</span><b>5.10</b></button>
+            <button class="more-markets">+42 рынка</button>
+          </div>
+        </article>
+
+        <div class="section-head">
+          <div><span class="live-dot"></span><h2>Сейчас в игре</h2></div>
+          <button>Все события →</button>
+        </div>
+
+        <div class="event-grid" id="eventGrid">
+          <article class="event-card" data-sport-card="football">
+            <div class="event-meta"><span>⚽ Англия · Premier League</span><button aria-label="В избранное">☆</button></div>
+            <div class="teams"><div><b>Liverpool</b><b>Arsenal</b></div><div class="mini-score"><strong>1</strong><strong>1</strong></div></div>
+            <div class="event-time"><span class="live-dot"></span> 52:08 · 2-й тайм</div>
+            <div class="odds-row">
+              <button class="odd" data-event="Liverpool — Arsenal" data-pick="П1" data-odd="2.10"><span>П1</span><b>2.10</b></button>
+              <button class="odd" data-event="Liverpool — Arsenal" data-pick="X" data-odd="3.50"><span>X</span><b>3.50</b></button>
+              <button class="odd" data-event="Liverpool — Arsenal" data-pick="П2" data-odd="3.20"><span>П2</span><b>3.20</b></button>
+            </div>
+          </article>
+
+          <article class="event-card" data-sport-card="basketball">
+            <div class="event-meta"><span>◉ EuroLeague · 4-я четверть</span><button aria-label="В избранное">☆</button></div>
+            <div class="teams"><div><b>Olympiacos</b><b>Fenerbahçe</b></div><div class="mini-score"><strong>76</strong><strong>72</strong></div></div>
+            <div class="event-time"><span class="live-dot"></span> 04:18 · владение Fenerbahçe</div>
+            <div class="odds-row two">
+              <button class="odd" data-event="Olympiacos — Fenerbahçe" data-pick="П1" data-odd="1.44"><span>П1</span><b>1.44</b></button>
+              <button class="odd" data-event="Olympiacos — Fenerbahçe" data-pick="П2" data-odd="2.75"><span>П2</span><b>2.75</b></button>
+            </div>
+          </article>
+
+          <article class="event-card" data-sport-card="tennis">
+            <div class="event-meta"><span>● ATP 500 · Center Court</span><button aria-label="В избранное">☆</button></div>
+            <div class="teams"><div><b>J. Sinner</b><b>C. Alcaraz</b></div><div class="mini-score sets"><strong>1 <i>4</i></strong><strong>0 <i>3</i></strong></div></div>
+            <div class="event-time"><span class="live-dot"></span> 2-й сет · подача Sinner</div>
+            <div class="odds-row two">
+              <button class="odd" data-event="Sinner — Alcaraz" data-pick="П1" data-odd="1.72"><span>П1</span><b>1.72</b></button>
+              <button class="odd" data-event="Sinner — Alcaraz" data-pick="П2" data-odd="2.05"><span>П2</span><b>2.05</b></button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="subpage" id="sportsPage" hidden>
+        <div class="page-title"><div><span>ЛИНИЯ</span><h1>Спорт</h1></div><button class="filter-button">Сегодня ⌄</button></div>
+        <div class="league-list">
+          <article class="league-block"><header><div><b>⚽ Англия</b><span>Premier League</span></div><button>☆</button></header>
+            <div class="league-event"><div><small>20:30</small><b>Manchester City</b><b>Chelsea</b></div><div class="odds-row"><button class="odd" data-event="Manchester City — Chelsea" data-pick="П1" data-odd="1.78"><span>П1</span><b>1.78</b></button><button class="odd" data-event="Manchester City — Chelsea" data-pick="X" data-odd="3.90"><span>X</span><b>3.90</b></button><button class="odd" data-event="Manchester City — Chelsea" data-pick="П2" data-odd="4.60"><span>П2</span><b>4.60</b></button></div></div>
+            <div class="league-event"><div><small>22:45</small><b>Tottenham</b><b>Newcastle</b></div><div class="odds-row"><button class="odd" data-event="Tottenham — Newcastle" data-pick="П1" data-odd="2.25"><span>П1</span><b>2.25</b></button><button class="odd" data-event="Tottenham — Newcastle" data-pick="X" data-odd="3.55"><span>X</span><b>3.55</b></button><button class="odd" data-event="Tottenham — Newcastle" data-pick="П2" data-odd="2.95"><span>П2</span><b>2.95</b></button></div></div>
+          </article>
+          <article class="league-block"><header><div><b>● ATP 500</b><span>Barcelona Open</span></div><button>☆</button></header>
+            <div class="league-event"><div><small>18:00</small><b>A. Zverev</b><b>D. Medvedev</b></div><div class="odds-row two"><button class="odd" data-event="Zverev — Medvedev" data-pick="П1" data-odd="1.92"><span>П1</span><b>1.92</b></button><button class="odd" data-event="Zverev — Medvedev" data-pick="П2" data-odd="1.88"><span>П2</span><b>1.88</b></button></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="subpage" id="betsPage" hidden>
+        <div class="page-title"><div><span>ИСТОРИЯ</span><h1>Мои ставки</h1></div></div>
+        <div class="segmented"><button class="active">Активные <i>2</i></button><button>Рассчитанные</button></div>
+        <div class="my-bets">
+          <article class="bet-card"><header><b>ЭКСПРЕСС · 2 СОБЫТИЯ</b><span class="status active-status">Активна</span></header><div class="bet-leg"><small>Real Madrid — Barcelona</small><strong>П1 <em>@ 1.65</em></strong></div><div class="bet-leg"><small>Liverpool — Arsenal</small><strong>Тотал больше 2.5 <em>@ 1.72</em></strong></div><footer><div><small>Ставка</small><b>100.00 USDT</b></div><div><small>Коэффициент</small><b>2.84</b></div><div><small>Возможный выигрыш</small><b class="accent">283.80 USDT</b></div></footer></article>
+          <article class="bet-card"><header><b>ОДИНОЧНАЯ</b><span class="status active-status">Активна</span></header><div class="bet-leg"><small>Olympiacos — Fenerbahçe</small><strong>П1 <em>@ 1.44</em></strong></div><footer><div><small>Ставка</small><b>50.00 USDT</b></div><div><small>Коэффициент</small><b>1.44</b></div><div><small>Возможный выигрыш</small><b class="accent">72.00 USDT</b></div></footer></article>
+        </div>
+      </section>
+
+      <section class="subpage" id="profilePage" hidden>
+        <div class="profile-hero"><div class="profile-avatar">IK</div><div><small>DEMO ACCOUNT #183729</small><h1>Иван Коротков</h1><p>@ivankorotkov · <span>✓ Верифицирован</span></p></div></div>
+        <div class="wallet-panel"><div><small>Общий баланс</small><h2>1 500.00 <span>USDT</span></h2><p>Доступно 1 250.00 · В ставках 250.00</p></div><div class="wallet-actions"><button id="depositBtn">＋ Пополнить</button><button id="withdrawBtn">↗ Вывести</button></div></div>
+        <div class="profile-grid"><button><span>▤</span><div><b>Транзакции</b><small>Пополнения, выводы и ставки</small></div><i>›</i></button><button><span>◇</span><div><b>Верификация</b><small>KYC подтверждён</small></div><i>›</i></button><button><span>⚙</span><div><b>Ответственная игра</b><small>Лимиты и самоисключение</small></div><i>›</i></button><button><span>?</span><div><b>Поддержка</b><small>Ответим в течение 5 минут</small></div><i>›</i></button></div>
+      </section>
+    </main>
+
+    <aside class="betslip" id="betslip" aria-label="Купон ставок">
+      <div class="slip-head"><div><small>КУПОН</small><h2>Ваши выборы <span id="slipCount">0</span></h2></div><button id="closeSlip" aria-label="Закрыть">×</button></div>
+      <div class="slip-empty" id="slipEmpty"><div>＋</div><h3>Купон пуст</h3><p>Выберите коэффициент события, чтобы добавить ставку.</p></div>
+      <div class="slip-items" id="slipItems"></div>
+      <div class="slip-summary" id="slipSummary" hidden>
+        <div class="slip-type"><button class="active">Экспресс</button><button>Система</button></div>
+        <label>Сумма ставки<div class="stake-input"><input id="stakeInput" type="number" inputmode="decimal" min="1" value="100"><span>USDT</span></div></label>
+        <div class="summary-line"><span>Общий коэффициент</span><strong id="totalOdds">1.00</strong></div>
+        <div class="summary-line payout"><span>Возможный выигрыш</span><strong id="payout">100.00 USDT</strong></div>
+        <button class="place-bet" id="placeBet">Сделать ставку</button>
+        <p class="demo-note">DEMO · реальные средства не используются</p>
+      </div>
+    </aside>
+
+    <nav class="bottom-nav" aria-label="Навигация">
+      <button class="active" data-page="home"><span>⌂</span>Главная</button>
+      <button data-page="sports"><span>◉</span>Спорт</button>
+      <button id="mobileSlip"><span class="slip-icon">＋<i id="mobileCount">0</i></span>Купон</button>
+      <button data-page="bets"><span>▤</span>Ставки</button>
+      <button data-page="profile"><span>◎</span>Профиль</button>
+    </nav>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "@astra/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@astra/ledger": "0.0.0",
+    "@astra/money": "0.0.0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "astra-platform",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Telegram-first sportsbook platform (DEMO-only until readiness approval)",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "check": "npm run typecheck && npm test && npm run test:database",
+    "dev:api": "tsc -b && node --env-file=.env --watch apps/api/dist/main.js",
+    "start:api": "tsc -b && node --env-file=.env apps/api/dist/main.js",
+    "test": "node --import tsx --test 'packages/**/*.test.ts' 'apps/**/*.test.ts'",
+    "test:database": "bash packages/database/test/run.sh",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "dependencies": {
+    "@nestjs/common": "^12.0.4",
+    "@nestjs/core": "^12.0.4",
+    "@nestjs/platform-fastify": "^12.0.4",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  }
+}
