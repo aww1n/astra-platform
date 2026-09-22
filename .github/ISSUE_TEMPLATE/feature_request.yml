@@ -1,0 +1,47 @@
+name: Feature request
+description: Propose a scoped product or engineering improvement
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user or engineering problem should be solved?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the desired behavior and relevant alternatives.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Mini App
+        - Betting
+        - Financial kernel
+        - Payments and custody
+        - Compliance
+        - Providers
+        - Platform and operations
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety and compliance impact
+      description: Note effects on money, ledger integrity, idempotency, privacy, security, responsible gambling, or jurisdiction controls.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have not included credentials, personal data, or confidential provider information.
+          required: true
