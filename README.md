@@ -134,4 +134,4 @@ Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request. Securit
 
 ## Legal
 
-This repository is private and no open-source license has been granted. All rights are reserved by the repository owner. The software is an engineering prototype and is not an offer of gambling, payment, custody, or financial services.
+This repository is publicly visible for portfolio and review purposes, but no open-source license has been granted. All rights are reserved by the repository owner. The software is an engineering prototype and is not an offer of gambling, payment, custody, or financial services.
